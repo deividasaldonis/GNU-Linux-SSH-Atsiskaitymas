@@ -66,6 +66,36 @@ Galiausiai prisijungiu prie serverio pridedamas private raktą ir kitą portą <
 ![](https://github.com/deividasaldonis/GNU-Linux-SSH-Atsiskaitymas/blob/main/ssh-into-server.JPG)
 
 
+## History
+
+**UBUNTU**
+1. `lsb_release -a`
+2. `sudo apt install openssh-server -y`
+3. `apt list openssh-server --installed`
+4. `sudo systemctl start ssh.service`
+5. `sudo systemctl status ssh.service`
+6. `ip addr`
+7. `cat .ssh/authorized_keys`
+8. `cd /etc/ssh`
+9. `sudo nano sshd_config`
+10. `grep "^Port\|^PasswordAuthentication\|^PubkeyAuthentication" sshd_config`
+11. `sudo systemctl daemon-reload`
+12. `sudo systemctl restart ssh.socket`
+
+**KALI**
+1. `lsb_release -a`
+2. `ssh-keygen -t ed25519 -f ~/.ssh/GNU-Linux-Atsiskaitymas -C "Atsiskaitomasis Darbas"`
+3. `cd .ssh`
+3. `ls`
+3. `cat GNU-Linux-Atsiskaitymas GNU-Linux-Atsiskaitymas.pub`
+3. `ssh-copy-id -i GNU-Linux-Atsiskaitymas.pub ubuntu@192.168.1.134`
+4. `ssh -i GNU-Linux-Atsiskaitymas -p 42069 ubuntu@192.168.1.134`
+
+
+
+
+
+
 
 
 
